@@ -20,9 +20,9 @@ nbPixels = im.width * im.height
 arrayStr = "#define {}_WIDTH {}\n".format(imName.upper(), im.width)
 arrayStr += "#define {}_HEIGHT {}\n".format(imName.upper(), im.height)
 arrayStr += "static const bool {}[{}] = {}\n".format(imName.upper(), nbPixels, '{')
-for y in range(0, im.width):
+for y in range(0, im.height):
 	arrayStr += "\t"
-	for x in range(0, im.height):
+	for x in range(0, im.width):
 		if pixels[x, y][0] == 0:
 			arrayStr += "1, "
 		else:
